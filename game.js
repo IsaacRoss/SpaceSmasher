@@ -6,7 +6,13 @@ var startGame = function() {
   Game.setBoard(0,new Starfield(20,0.4,100,true))
   Game.setBoard(1,new Starfield(50,0.6,100))
   Game.setBoard(2,new Starfield(100,1.0,50));
+  Game.setBoard(3,new TitleScreen("Space Smasher", 
+      "press space to start playing", playGame));
 
+}
+
+var playGame = function(){
+  Game.setBoard(3,new TitleScreen("Space Smasher", "Game started..."))
 }
 
 window.addEventListener("load", function() {
@@ -74,5 +80,7 @@ var Starfield = function(speed,opacity,numStars,clear) {
     offset = offset % stars.height;
   }
 }
+
+
 
 
